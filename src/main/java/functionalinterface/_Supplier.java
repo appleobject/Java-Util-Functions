@@ -1,5 +1,6 @@
 package functionalinterface;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 public class _Supplier
@@ -8,7 +9,7 @@ public class _Supplier
     {
         System.out.println(getDBConnectionUrl());
         System.out.println("Supplier...");
-        System.out.println(getDBConnectionUrlSupplier.get());
+        System.out.println(getDBConnectionUrlSuppliers.get());
 
     }
 
@@ -18,5 +19,10 @@ public class _Supplier
     }
 
     // Supplier Functional Interface
-    static Supplier<String> getDBConnectionUrlSupplier = ()-> "JDBC://localhost:5431/users";
+    static Supplier<List<String>> getDBConnectionUrlSuppliers = ()->
+            List.of(
+                    "JDBC://localhost:5431/users",
+                    "JDBC://localhost:5431/customers",
+                    "JDBC://localhost:5431/dispatchers"
+            );
 }
